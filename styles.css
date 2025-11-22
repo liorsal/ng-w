@@ -1,0 +1,414 @@
+/* משתנים CSS */
+:root {
+    --primary-color: #0066cc;
+    --secondary-color: #004499;
+    --text-color: #333333;
+    --bg-color: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+    --font-size-base: 16px;
+    --font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-family-readable: 'Arial', 'Helvetica', sans-serif;
+}
+
+/* איפוס בסיסי */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: var(--transition);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* כפתור נגישות צף */
+.accessibility-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    font-size: 24px;
+}
+
+.accessibility-btn:hover {
+    background: var(--secondary-color);
+    box-shadow: var(--shadow-hover);
+    transform: scale(1.1);
+}
+
+.accessibility-btn:focus {
+    outline: 3px solid #ffcc00;
+    outline-offset: 2px;
+}
+
+/* פאנל נגישות */
+.accessibility-panel {
+    position: fixed;
+    top: 90px;
+    left: 20px;
+    width: 320px;
+    max-width: calc(100vw - 40px);
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-hover);
+    z-index: 999;
+    transform: translateX(-400px);
+    transition: transform 0.3s ease;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+.accessibility-panel.active {
+    transform: translateX(0);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--primary-color);
+    color: white;
+    border-radius: 12px 12px 0 0;
+}
+
+.panel-header h2 {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.close-btn:focus {
+    outline: 2px solid #ffcc00;
+    outline-offset: 2px;
+}
+
+.panel-content {
+    padding: 20px;
+}
+
+.accessibility-option {
+    margin-bottom: 20px;
+}
+
+.accessibility-option label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.accessibility-option input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
+
+.font-size-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.control-btn {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary-color);
+    background: white;
+    color: var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.control-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.control-btn:focus {
+    outline: 2px solid #ffcc00;
+    outline-offset: 2px;
+}
+
+.font-size-display {
+    min-width: 60px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.reset-btn {
+    width: 100%;
+    padding: 12px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.reset-btn:hover {
+    background: #c82333;
+}
+
+.reset-btn:focus {
+    outline: 2px solid #ffcc00;
+    outline-offset: 2px;
+}
+
+/* תוכן האתר */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.main-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.main-content {
+    flex: 1;
+    padding: 40px 0;
+}
+
+.content-section {
+    margin-bottom: 40px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.content-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.content-section p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+}
+
+.features-list li {
+    padding: 12px 0;
+    padding-right: 30px;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.features-list li:last-child {
+    border-bottom: none;
+}
+
+.features-list li::before {
+    content: "✓";
+    position: absolute;
+    right: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.content-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 12px 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    display: inline-block;
+    transition: var(--transition);
+    width: fit-content;
+}
+
+.content-link:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.content-link:focus {
+    outline: 3px solid #ffcc00;
+    outline-offset: 2px;
+}
+
+.main-footer {
+    background: #f8f9fa;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+/* מצב ניגודיות גבוהה */
+body.high-contrast {
+    --text-color: #000000;
+    --bg-color: #ffffff;
+    --primary-color: #0000ff;
+    --secondary-color: #000080;
+    --border-color: #000000;
+}
+
+body.high-contrast .content-section {
+    border: 2px solid #000000;
+}
+
+body.high-contrast .content-link {
+    border-width: 3px;
+}
+
+/* סמן גדול */
+body.large-cursor * {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="black" stroke-width="2"/><circle cx="16" cy="16" r="2" fill="black"/></svg>'), auto !important;
+}
+
+/* קו תחתון לקישורים */
+body.underline-links a {
+    text-decoration: underline !important;
+    text-decoration-thickness: 2px;
+}
+
+/* גופן קריא */
+body.readable-font {
+    font-family: var(--font-family-readable);
+}
+
+body.readable-font * {
+    font-family: var(--font-family-readable) !important;
+}
+
+/* התאמות גודל טקסט */
+body.font-size-small {
+    font-size: calc(var(--font-size-base) * 0.875);
+}
+
+body.font-size-medium {
+    font-size: var(--font-size-base);
+}
+
+body.font-size-large {
+    font-size: calc(var(--font-size-base) * 1.25);
+}
+
+body.font-size-xlarge {
+    font-size: calc(var(--font-size-base) * 1.5);
+}
+
+body.font-size-xxlarge {
+    font-size: calc(var(--font-size-base) * 2);
+}
+
+/* תגובתיות */
+@media (max-width: 768px) {
+    .accessibility-btn {
+        width: 50px;
+        height: 50px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .accessibility-panel {
+        top: 70px;
+        left: 10px;
+        width: calc(100vw - 20px);
+    }
+
+    .main-header h1 {
+        font-size: 2rem;
+    }
+
+    .content-section {
+        padding: 20px;
+    }
+}
+
+/* אנימציות */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-section {
+    animation: fadeIn 0.5s ease;
+}
+

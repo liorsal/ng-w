@@ -1,0 +1,436 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>תוסף נגישות — דמו</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+    
+    :root {
+      --bg: #f5f7fa;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --accent: #0066cc;
+      --accent-hover: #0052a3;
+      --accent-light: #3399ff;
+      --accent-bg: #e6f2ff;
+      --border: #e5e7eb;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      font-family: "Rubik", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0;
+      background: transparent;
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      padding: 32px 40px;
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+      font-size: 28px;
+      margin: 0 0 12px 0;
+      color: var(--accent);
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    p.lead {
+      color: var(--muted);
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .install-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      box-shadow: 0 2px 4px rgba(0, 102, 204, 0.2);
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .install-btn:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 4px 8px rgba(0, 102, 204, 0.3);
+    }
+
+    .install-btn:active {
+      transform: translateY(0);
+    }
+
+    .cols {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 24px;
+      padding: 40px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 32px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-light);
+    }
+
+    .card h2, .card h3 {
+      margin-top: 0;
+      color: #1e293b;
+      font-weight: 600;
+    }
+
+    .card h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    .card h4 {
+      font-size: 16px;
+      margin-top: 20px;
+      margin-bottom: 12px;
+      color: #334155;
+    }
+
+    ul {
+      padding-right: 1.5rem;
+      margin: 0 0 16px;
+      list-style: none;
+    }
+
+    ul li {
+      position: relative;
+      padding-right: 24px;
+      margin-bottom: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    ul li::before {
+      content: '✓';
+      position: absolute;
+      right: 0;
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .feature {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      padding: 20px;
+      background: var(--accent-bg);
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .feature:hover {
+      background: #d6e9ff;
+      border-color: var(--accent-light);
+    }
+
+    .badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: var(--accent);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .feature > div {
+      flex: 1;
+    }
+
+    .feature > div > div:first-child {
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 4px;
+      font-size: 16px;
+    }
+
+    .feature > div > div:last-child {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    pre {
+      background: #1f2937;
+      color: #e5e7eb;
+      padding: 20px;
+      border-radius: 8px;
+      overflow: auto;
+      font-size: 13px;
+      line-height: 1.6;
+      border: 1px solid #374151;
+    }
+
+    code {
+      font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Courier New', monospace;
+      font-size: 13px;
+    }
+
+    pre code {
+      color: #cbd5e1;
+    }
+
+    .card code:not(pre code) {
+      background: var(--accent-bg);
+      color: var(--accent);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    footer {
+      margin-top: 0;
+      padding: 24px 40px;
+      border-top: 1px solid var(--border);
+      background: var(--card);
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 880px) {
+      .cols {
+        grid-template-columns: 1fr;
+        padding: 24px;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .install-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      p.lead {
+        font-size: 16px;
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      .cols {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main" aria-labelledby="title">
+    <header>
+      <div>
+        <h1 id="title">תוסף הנגישות של ליאור — דמו</h1>
+        <p class="lead">תוסף נגישות שמיישם מצבים כמו ניגודיות גבוהה, הגדלת טקסט, קריאה בקול ועוד — מוכן להטמעה באתר שלך.</p>
+      </div>
+      <div style="text-align:left">
+        <a class="install-btn" id="open-widget" href="#" role="button">פתח תפריט נגישות</a>
+      </div>
+    </header>
+
+    <div class="cols" style="margin-top:18px">
+      <section class="card" aria-labelledby="features-title">
+        <h2 id="features-title" style="margin-top:0">מה התוסף עושה</h2>
+
+        <div class="feature"><div class="badge">A</div>
+          <div>
+            <div style="font-weight:600">מצבים מוכנים מראש</div>
+            <div style="color:var(--muted)">פרופילים לדיסלקסיה, לקויי ראייה וקוגניטיביים.</div>
+          </div>
+        </div>
+
+        <div class="feature"><div class="badge">T</div>
+          <div>
+            <div style="font-weight:600">התאמות טקסט</div>
+            <div style="color:var(--muted)">הגדלת טקסט, ריווח, ומחיקת אנימציות.</div>
+          </div>
+        </div>
+
+        <div class="feature"><div class="badge">R</div>
+          <div>
+            <div style="font-weight:600">קריאה בקול</div>
+            <div style="color:var(--muted)">TTS מובנה לדפדפנים התומכים.</div>
+          </div>
+        </div>
+
+        <h3 style="margin-top:14px;font-size:15px">איך זה מרגיש — הדגמה</h3>
+        <p style="color:var(--muted)">לחיצה על הכפתור בתחתית העמוד (או על "פתח תפריט נגישות") תפתח את ווידג'ט ההטמעה.</p>
+
+        <h3 style="margin-top:14px;font-size:15px">סקירה קצרה</h3>
+        <ul>
+          <li>מוכן לשימוש — ללא תלות חיצונית.</li>
+          <li>נבדק לפי WCAG 2.1 AA.</li>
+          <li>ניתן לשמור פרופילים ולהגדיר מפתחות לקוח.</li>
+        </ul>
+      </section>
+
+      <aside class="card" aria-labelledby="install-title">
+        <h3 id="install-title" style="margin-top:0">איך לשלב — קוד</h3>
+        <p style="color:var(--muted);margin-bottom:8px">העתק/י והדבק/י בתוך &lt;head&gt; או לפני סגירת &lt;body&gt; (הספרייה נטענת עם <code>defer</code>):</p>
+
+        <pre><code>&lt;!-- העתק את הקובץ שהעלית: widget-v2.js --&gt;
+&lt;script src="widget-v2.js"
+        data-client-key="TEST-555"
+        defer&gt;&lt;/script&gt;</code></pre>
+
+        <p style="color:var(--muted);margin-top:10px">דוגמה: ניתן לשנות <code>data-client-key</code> למפתח של הלקוח. ללא מפתח תקין הווידג'ט יחזור ויחסום את עצמו (ראה LICENSE_MANAGER בקוד).</p>
+
+        <h4 style="margin-top:12px">הפעלה מהעמוד (JS)</h4>
+        <p style="color:var(--muted)">כדי לפתוח את הפאנל דרך כפתור — השתמש בקוד הבא:</p>
+        <pre><code>document.getElementById('open-widget').addEventListener('click', e =&gt; {
+  e.preventDefault();
+  // אם הווידג'ט יוצר אלמנט עם id = lior-acc-root, נחפש ונלחץ על הכפתור הפנימי:
+  const root = document.getElementById('lior-acc-root');
+  if (root) {
+    const btn = root.querySelector('.lior-acc-button');
+    if (btn) btn.click();
+  } else {
+    alert('הווידג\'ט טרם נטען. רענן את הדף או הטעין את התסריט עם defer.');
+  }
+});</code></pre>
+      </aside>
+    </div>
+
+    <section style="margin-top:18px" class="card" aria-labelledby="accessibility-statement">
+      <h3 id="accessibility-statement" style="margin-top:0">הצהרת נגישות קצרה</h3>
+      <p style="color:var(--muted);margin-bottom:6px">התוסף נועד לשפר נגישות עבור משתמשי קצה — אך חשוב לבצע בדיקות משלימות (NVDA/VoiceOver/JAWS) ולספק טקסט אלטרנטיבי לתמונות, כותרות הגיוניות וניווט לוגי.</p>
+      <p style="color:var(--muted);margin-bottom:0"><strong>טיפ פרקטי:</strong> אל תסתמכו רק על ווידג'ט — בצעו בדיקות ידניות ואוטומטיות.</p>
+    </section>
+
+    <footer>
+      גרסה דמו • שימוש מומלץ בסביבה מבודדת לצורך בדיקות • ליאור (דוגמת דמו)
+    </footer>
+  </div>
+
+  <!-- כאן נטען הווידג'ט שלך - הנתיב המקומי כפי שביקשת -->
+  <script src="widget-v2.js"
+          data-client-key="TEST-555"
+          defer></script>
+
+  <!-- חיבור כפתור פתיחה לוווידג'ט -->
+  <script>
+    (function(){
+      const openBtn = document.getElementById('open-widget');
+      openBtn.addEventListener('click', async (e)=>{
+        e.preventDefault();
+        // קצר ולעניין — מנסה לאתר את השורש וללחוץ על הכפתור שבתוכו
+        const retry = () => {
+          const root = document.getElementById('lior-acc-root') || document.querySelector('#lior-acc-root');
+          if (!root) return false;
+          const btn = root.querySelector('.lior-acc-button');
+          if (btn) { btn.click(); return true; }
+          return false;
+        };
+        if (!retry()) {
+          // אם לא קיים עדיין - חכה מעט ונסה שוב (לרוב ה-script נטען מיד עם defer)
+          let attempts = 0;
+          const id = setInterval(()=>{
+            attempts++;
+            if (retry() || attempts>10) clearInterval(id);
+          }, 200);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
