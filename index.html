@@ -4,439 +4,140 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>תוסף נגישות — ליאור</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --primary: #0066ff;
-      --primary-dark: #0052cc;
-      --primary-light: #e6f2ff;
-      --text: #1a1a1a;
-      --text-light: #666;
-      --bg: #ffffff;
-      --bg-light: #f8f9fa;
-      --border: #e1e5e9;
-      --success: #10b981;
-      --radius: 12px;
-      --radius-sm: 8px;
-      --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--bg-light);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Header */
-    .header {
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      padding: 32px 0;
-      margin-bottom: 48px;
-    }
-
-    .header-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 32px;
-    }
-
-    .header-text h1 {
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
-    }
-
-    .header-text p {
-      font-size: 16px;
-      color: var(--text-light);
-      max-width: 600px;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 24px;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: var(--radius-sm);
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
-    }
-
-    .btn-primary:active {
-      transform: translateY(0);
-    }
-
-    /* Main Content */
-    .main {
-      padding-bottom: 64px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 32px;
-      margin-bottom: 32px;
-    }
-
-    /* Cards */
-    .card {
-      background: var(--bg);
-      border-radius: var(--radius);
-      padding: 32px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      transition: all 0.2s ease;
-    }
-
-    .card:hover {
-      box-shadow: var(--shadow-lg);
-      border-color: var(--primary-light);
-    }
-
-    .card h2 {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 24px;
-      letter-spacing: -0.3px;
-    }
-
-    .card h3 {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 16px;
-      margin-top: 24px;
-    }
-
-    .card h3:first-child {
-      margin-top: 0;
-    }
-
-    .card p {
-      color: var(--text-light);
-      font-size: 15px;
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-
-    .card p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Features */
-    .features {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .feature-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 20px;
-      background: var(--primary-light);
-      border-radius: var(--radius-sm);
-      border: 1px solid transparent;
-      transition: all 0.2s ease;
-    }
-
-    .feature-item:hover {
-      background: #d6e9ff;
-      border-color: var(--primary);
-    }
-
-    .feature-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--primary);
-      color: white;
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
-    .feature-content h4 {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-
-    .feature-content p {
-      font-size: 14px;
-      color: var(--text-light);
-      margin: 0;
-    }
-
-    /* List */
-    .list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .list li {
-      position: relative;
-      padding-right: 24px;
-      margin-bottom: 12px;
-      color: var(--text-light);
-      font-size: 15px;
-    }
-
-    .list li::before {
-      content: '✓';
-      position: absolute;
-      right: 0;
-      color: var(--success);
-      font-weight: 600;
-    }
-
-    /* Code */
-    .code-block {
-      background: #1e293b;
-      color: #e2e8f0;
-      padding: 20px;
-      border-radius: var(--radius-sm);
-      overflow-x: auto;
-      font-size: 13px;
-      line-height: 1.6;
-      font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
-      margin: 16px 0;
-    }
-
-    .code-block code {
-      color: inherit;
-    }
-
-    .inline-code {
-      background: var(--primary-light);
-      color: var(--primary);
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 13px;
-      font-family: 'SF Mono', Monaco, monospace;
-      font-weight: 500;
-    }
-
-    /* Statement Card */
-    .statement-card {
-      background: var(--bg);
-      border-radius: var(--radius);
-      padding: 32px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-    }
-
-    /* Footer */
-    .footer {
-      background: var(--bg);
-      border-top: 1px solid var(--border);
-      padding: 24px 0;
-      text-align: center;
-      color: var(--text-light);
-      font-size: 14px;
-    }
-
-    /* Responsive */
-    @media (max-width: 968px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .btn-primary {
-        width: 100%;
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .container {
-        padding: 0 16px;
-      }
-
-      .header {
-        padding: 24px 0;
-        margin-bottom: 32px;
-      }
-
-      .header-text h1 {
-        font-size: 26px;
-      }
-
-      .card {
-        padding: 24px;
-      }
-
-      .main {
-        padding-bottom: 48px;
-      }
-
-      .grid {
-        gap: 24px;
-        margin-bottom: 24px;
-      }
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .card {
-      animation: fadeIn 0.4s ease-out;
-    }
-
-    .card:nth-child(1) { animation-delay: 0.1s; }
-    .card:nth-child(2) { animation-delay: 0.2s; }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="header">
+  <header class="site-header">
     <div class="container">
-      <div class="header-content">
-        <div class="header-text">
-          <h1>תוסף נגישות</h1>
-          <p>פתרון נגישות מתקדם עם מצבים מוכנים מראש, התאמות אישיות וקריאה בקול — מוכן להטמעה מיידית</p>
-        </div>
-        <a href="#" class="btn-primary" id="open-widget">פתח תפריט נגישות</a>
+      <div class="nav-content">
+        <div class="logo">Lior.Accessibility</div>
+        <a href="https://github.com/liorsal/negi-vs" class="btn btn-secondary" target="_blank">GitHub</a>
       </div>
     </div>
   </header>
 
-  <main class="main">
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="badge">גרסה 2.0 זמינה כעת</div>
+        <h1>תוסף נגישות <span>מתקדם</span><br>לאתר שלך</h1>
+        <p>פתרון נגישות מלא עם מצבים מוכנים מראש, התאמות אישיות וקריאה בקול. מוכן להטמעה מיידית, ללא תלות בשרתים חיצוניים.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary" id="open-widget">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/></svg>
+            פתח תפריט נגישות
+          </a>
+          <a href="#integration" class="btn btn-secondary">הוראות התקנה</a>
+        </div>
+      </div>
+    </section>
+
     <div class="container">
-      <div class="grid">
-        <section class="card">
-          <h2>מה התוסף עושה</h2>
-          
-          <div class="features">
-            <div class="feature-item">
-              <div class="feature-icon">A</div>
-              <div class="feature-content">
-                <h4>מצבים מוכנים מראש</h4>
-                <p>פרופילים מותאמים לדיסלקסיה, לקויי ראייה וצרכים קוגניטיביים</p>
+      <div class="main-grid">
+        <!-- Main Content -->
+        <div class="content-col">
+          <section class="card">
+            <h2>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
+              מה התוסף עושה
+            </h2>
+            
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 5a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9M3 12a9 9 0 0 1 9-9 9 9 0 0 1 9 9"/></svg>
+                </div>
+                <h4>מצבים מוכנים</h4>
+                <p>פרופילים לדיסלקסיה, לקויי ראייה וצרכים קוגניטיביים.</p>
               </div>
-            </div>
 
-            <div class="feature-item">
-              <div class="feature-icon">T</div>
-              <div class="feature-content">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
+                </div>
                 <h4>התאמות טקסט</h4>
-                <p>הגדלת טקסט, ריווח אותיות ומילים, וביטול אנימציות</p>
+                <p>שינוי גודל, ריווח וגופן קריא בזמן אמת.</p>
               </div>
-            </div>
 
-            <div class="feature-item">
-              <div class="feature-icon">R</div>
-              <div class="feature-content">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 17-5.86"/><path d="M19.3 14.3a2.83 2.83 0 0 1 0 4l-2.6 2.6a2.83 2.83 0 0 1-4 0l-2.6-2.6a2.83 2.83 0 0 1 0-4"/><path d="M14.7 14.3l4.6 4.6"/></svg>
+                </div>
                 <h4>קריאה בקול</h4>
-                <p>Text-to-Speech מובנה לדפדפנים התומכים</p>
+                <p>מנוע TTS מובנה להקראת תוכן האתר.</p>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m16 6-4 4-4-4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg>
+                </div>
+                <h4>ביטול הבהובים</h4>
+                <p>עצירת אנימציות למניעת עומס חושי.</p>
               </div>
             </div>
-          </div>
 
-          <h3>איך זה עובד</h3>
-          <p>לחץ על כפתור הנגישות בתחתית העמוד או על הכפתור למעלה כדי לפתוח את תפריט ההגדרות ולהתאים את האתר לצרכים שלך.</p>
+            <h3>יתרונות מרכזיים</h3>
+            <ul class="checklist">
+              <li><strong>עצמאי לחלוטין</strong> — אין תלות בשרתים חיצוניים או שירותי צד ג'</li>
+              <li><strong>תואם תקנים</strong> — נבנה בהתאם להנחיות WCAG 2.1 רמה AA</li>
+              <li><strong>קל משקל</strong> — טעינה מהירה ללא פגיעה בביצועי האתר</li>
+              <li><strong>שמירה מקומית</strong> — זוכר את העדפות המשתמש לביקורים חוזרים</li>
+            </ul>
+          </section>
 
-          <h3>יתרונות</h3>
-          <ul class="list">
-            <li>מוכן לשימוש — ללא תלות חיצונית</li>
-            <li>תואם WCAG 2.1 AA</li>
-            <li>שמירת הגדרות אוטומטית</li>
-            <li>ניהול מפתחות לקוח</li>
-          </ul>
-        </section>
+          <section class="card" style="margin-top: 32px">
+             <h2>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              הצהרת נגישות
+            </h2>
+            <p>התוסף נועד לשפר את הנגישות עבור משתמשי קצה ולסייע בעמידה בתקנות. עם זאת, התקנת תוסף אינה מחליפה את הצורך בהנגשת קוד המקור של האתר.</p>
+            <p style="margin-bottom: 0">מומלץ לבצע בדיקות תקופתיות עם קוראי מסך (כגון NVDA או VoiceOver) ולוודא שהאתר עצמו בנוי בצורה סמנטית ונגישה.</p>
+          </section>
+        </div>
 
-        <aside class="card">
-          <h2>איך לשלב</h2>
-          <p>העתק והדבק את הקוד הבא לפני סגירת תג <code class="inline-code">&lt;/body&gt;</code>:</p>
+        <!-- Sidebar -->
+        <aside id="integration">
+          <div class="card">
+            <h2>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+              איך לשלב
+            </h2>
+            <p>העתק והדבק את הקוד הבא לפני סגירת תג <code class="inline-code">&lt;/body&gt;</code>:</p>
 
-          <div class="code-block">
-<code>&lt;!-- Lior Accessibility Widget v2.0 --&gt;
-&lt;script
-  src="https://liorsal.github.io/negi-vs/widget.min.js"
-  data-client-key="ROEE-TATTOO-01"
-  defer&gt;
-&lt;/script&gt;</code>
-          </div>
+            <div class="code-wrapper">
+              <div class="code-block">
+                <span class="code-comment">&lt;!-- Lior Accessibility Widget v2.0 --&gt;</span><br>
+                <span class="code-tag">&lt;script</span><br>
+                &nbsp;&nbsp;<span class="code-attr">src</span>=<span class="code-val">"https://liorsal.github.io/negi-vs/widget.min.js"</span><br>
+                &nbsp;&nbsp;<span class="code-attr">data-client-key</span>=<span class="code-val">"YOUR-KEY"</span><br>
+                &nbsp;&nbsp;<span class="code-attr">defer</span><span class="code-tag">&gt;</span><br>
+                <span class="code-tag">&lt;/script&gt;</span>
+              </div>
+            </div>
 
-          <p>ניתן לשנות את <code class="inline-code">data-client-key</code> למפתח הלקוח שלך.</p>
+            <p style="font-size: 14px">החלף את <code class="inline-code">YOUR-KEY</code> במפתח הלקוח שלך.</p>
 
-          <h3>הפעלה מתוכנית</h3>
-          <p>כדי לפתוח את הפאנל דרך JavaScript:</p>
-
-          <div class="code-block">
-<code>const root = document.getElementById('lior-acc-root');
-if (root) {
-  const btn = root.querySelector('.lior-acc-button');
-  if (btn) btn.click();
-}</code>
+            <h3>שליטה דרך קוד</h3>
+            <p>ניתן לפתוח את התפריט באמצעות JavaScript:</p>
+            
+            <div class="code-wrapper">
+              <div class="code-block">
+                <span class="code-tag">const</span> root = document.<span class="code-attr">getElementById</span>(<span class="code-val">'lior-acc-root'</span>);<br>
+                <span class="code-tag">if</span> (root) {<br>
+                &nbsp;&nbsp;<span class="code-tag">const</span> btn = root.<span class="code-attr">querySelector</span>(<span class="code-val">'.lior-acc-button'</span>);<br>
+                &nbsp;&nbsp;<span class="code-tag">if</span> (btn) btn.<span class="code-attr">click</span>();<br>
+                }
+              </div>
+            </div>
           </div>
         </aside>
       </div>
-
-      <section class="statement-card">
-        <h3>הצהרת נגישות</h3>
-        <p>התוסף נועד לשפר את הנגישות עבור משתמשי קצה, אך חשוב לבצע בדיקות משלימות עם כלי נגישות (NVDA, VoiceOver, JAWS) ולספק תמיכה מלאה בתקני WCAG.</p>
-        <p><strong>טיפ:</strong> אל תסתמכו רק על ווידג'ט — בצעו בדיקות ידניות ואוטומטיות באופן קבוע.</p>
-      </section>
     </div>
   </main>
 
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container">
-      גרסה דמו • ליאור
+      <p>© 2024 תוסף נגישות. פותח ע״י ליאור.</p>
     </div>
   </footer>
 
