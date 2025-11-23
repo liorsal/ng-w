@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   
@@ -20,9 +21,13 @@
         </div>
         <span>ZeepClick</span>
       </div>
+      <button class="mobile-menu-btn" aria-label="תפריט">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav class="nav-links">
         <a href="#features">פיצ'רים</a>
-        <a href="#all-features">מפרט מלא</a>
         <a href="#integration">התקנה</a>
       </nav>
       
@@ -61,88 +66,150 @@
         </div>
       </div>
       <div class="hero-visual">
-        <div class="visual-card">
-            <div class="visual-header">
-                <div class="dot red"></div>
-                <div class="dot yellow"></div>
-                <div class="dot green"></div>
+        <div class="visual-card hero-mockup">
+          <div class="mockup-header">
+            <span class="mockup-title">תפריט נגישות</span>
+            <span class="mockup-badge">v2.0</span>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-row">
+              <div class="mockup-icon-box" style="background: #dbeafe; color: #2563eb">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 5a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9M3 12a9 9 0 0 1 9-9 9 9 0 0 1 9 9"/></svg>
+              </div>
+              <div class="mockup-text">
+                <div class="mockup-line lg"></div>
+                <div class="mockup-line sm"></div>
+              </div>
+              <div class="mockup-toggle active"></div>
             </div>
-            <div class="visual-body">
-                <div class="skeleton-line w-75"></div>
-                <div class="skeleton-line w-50"></div>
-                <div class="skeleton-row">
-                    <div class="skeleton-box"></div>
-                    <div class="skeleton-box"></div>
-                </div>
-                <div class="float-ui ui-1">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9M3 12a9 9 0 0 1 9-9 9 9 0 0 1 9 9"/></svg>
-                    ניגודיות
-                </div>
-                <div class="float-ui ui-2">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
-                    גודל טקסט
-                </div>
+            
+            <div class="mockup-row">
+              <div class="mockup-icon-box" style="background: #dcfce7; color: #16a34a">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
+              </div>
+              <div class="mockup-text">
+                <div class="mockup-line lg"></div>
+                <div class="mockup-line sm"></div>
+              </div>
+              <div class="mockup-toggle"></div>
             </div>
+
+            <div class="mockup-row">
+              <div class="mockup-icon-box" style="background: #ede9fe; color: #7c3aed">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 17-5.86"/><path d="M19.3 14.3a2.83 2.83 0 0 1 0 4l-2.6 2.6a2.83 2.83 0 0 1-4 0l-2.6-2.6a2.83 2.83 0 0 1 0-4"/><path d="M14.7 14.3l4.6 4.6"/></svg>
+              </div>
+              <div class="mockup-text">
+                <div class="mockup-line lg"></div>
+              </div>
+              <div class="mockup-toggle"></div>
+            </div>
+          </div>
+          
+          <div class="floating-badge">
+            <span class="check-icon">✓</span> תאימות לתקן
+          </div>
         </div>
       </div>
     </div>
   </section>
-
-  <section class="features" id="features">
+  <section class="bento-section" id="features">
     <div class="container">
       <div class="section-header">
-        <h2>ארגז כלים מלא לנגישות</h2>
-        <p>כל מה שהמשתמשים שלכם צריכים כדי לגלוש בנוחות</p>
+          <div class="badge-pill">למה ZeepClick?</div>
+          <h2>חוויה ללא פשרות</h2>
+          <p>טכנולוגיה שעובדת בשבילך, לא הפוך.</p>
       </div>
       
-      <div class="grid-3">
-        <div class="feature-card">
-          <div class="icon-box blue">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 5a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9M3 12a9 9 0 0 1 9-9 9 9 0 0 1 9 9"/></svg>
+      <div class="bento-grid">
+        <div class="bento-card card-adaptation">
+          <div class="bento-content">
+            <h3>התאמה חכמה לכל גולש</h3>
+            <p>המערכת מזהה אוטומטית העדפות דפדפן ומתאימה את האתר פרואקטיבית לכל משתמש.</p>
           </div>
-          <h3>פרופילים חכמים</h3>
-          <p>התאמה מהירה בלחיצה אחת: עיוורון צבעים, הפרעות קשב, דיסלקציה ועוד.</p>
+          <div class="bento-visual adaptation-visual">
+             <div class="ui-bubble b1"></div>
+             <div class="ui-bubble b2"></div>
+             <div class="ui-blur"></div>
+          </div>
         </div>
 
-        <div class="feature-card">
-          <div class="icon-box purple">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 17-5.86"/><path d="M19.3 14.3a2.83 2.83 0 0 1 0 4l-2.6 2.6a2.83 2.83 0 0 1-4 0l-2.6-2.6a2.83 2.83 0 0 1 0-4"/><path d="M14.7 14.3l4.6 4.6"/></svg>
-          </div>
-          <h3>קורא מסך מובנה</h3>
-          <p>מנוע TTS (Text-to-Speech) מתקדם להקראת תוכן האתר ללא צורך בתוכנה חיצונית.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="icon-box green">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
-          </div>
-          <h3>עיצוב מותאם אישית</h3>
-          <p>המשתמש שולט בגודל הפונט, הריווח, צבעי הרקע וצורת הסמן.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="icon-box orange">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m16 6-4 4-4-4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg>
-          </div>
-          <h3>מניעת הסחות דעת</h3>
-          <p>מצב קריאה ממוקד, הסתרת תמונות ועצירת אנימציות והבהובים מסוכנים.</p>
-        </div>
-
-        <div class="feature-card">
-            <div class="icon-box pink">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="bento-card card-speed dark-mode">
+          <div class="bento-content">
+            <div class="icon-circle flash-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </div>
-            <h3>הצהרת נגישות</h3>
-            <p>דף הצהרת נגישות מובנה שמתעדכן אוטומטית לפי ההגדרות הפעילות.</p>
+            <h3>Zero Latency</h3>
+            <p>0ms השפעה על זמן הטעינה. הקוד שוקל פחות מתמונה אחת.</p>
           </div>
+          <div class="speed-visual">
+              <div class="speed-bar"></div>
+              <div class="speed-number">100%</div>
+          </div>
+        </div>
 
-          <div class="feature-card">
-            <div class="icon-box teal">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3"/><path d="M15 1v3"/><path d="M9 20v3"/><path d="M15 20v3"/><path d="M20 9h3"/><path d="M20 14h3"/><path d="M1 9h3"/><path d="M1 14h3"/></svg>
-            </div>
-            <h3>זכרון מקומי</h3>
-            <p>שמירת העדפות המשתמש בדפדפן, כך שהאתר יהיה נגיש גם בביקור הבא.</p>
+        <div class="bento-card card-compliance">
+          <div class="bento-content">
+            <h3>תאימות 100%</h3>
+            <p>תקן ת"י 5568 & WCAG 2.1</p>
           </div>
+          <div class="check-badge">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+        </div>
+
+        <div class="bento-card card-darkmode" id="card-darkmode">
+          <div class="bento-content row-content">
+            <div class="text-side">
+                <h3>Dark Mode מובנה</h3>
+                <p>הופך כל אתר לכהה בלחיצה.</p>
+            </div>
+            <div class="visual-side">
+                <div class="ios-toggle active" id="dm-toggle">
+                    <div class="knob"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="before-after">
+    <div class="container">
+      <div class="section-header">
+        <h2>לפני / אחרי נגישות</h2>
+        <p>הזיזו את המחוון כדי לראות את השיפור בחוויית המשתמש.</p>
+      </div>
+      <div class="ba-wrapper">
+        <div class="ba-visual">
+          <div class="ba-panel ba-before">
+            <div class="ba-tag">לפני</div>
+            <div class="ba-content-wrap">
+                <h3>אתר רגיל ללא התאמות</h3>
+                <div class="chaos-grid">
+                    <div class="chaos-ad"></div>
+                    <div class="chaos-item"></div>
+                    <div class="chaos-item"></div>
+                    <div class="chaos-popup">חוסר נגישות</div>
+                </div>
+                <p>טקסט קטן, ניגודיות נמוכה, ומכשולים לקוראי מסך.</p>
+            </div>
+          </div>
+          <div class="ba-panel ba-after">
+            <div class="ba-tag">אחרי</div>
+            <div class="ba-content-wrap">
+                <h3>אתר מונגש ומותאם</h3>
+                <div class="clean-layout">
+                    <div class="clean-header"></div>
+                    <div class="clean-text"></div>
+                    <div class="clean-text medium"></div>
+                    <div class="clean-text short"></div>
+                    <div class="clean-btn"></div>
+                </div>
+                <p>טקסט קריא, ניגודיות חכמה, והתאמה מלאה לכל הגולשים.</p>
+            </div>
+          </div>
+          <input type="range" min="0" max="100" value="50" class="ba-slider" aria-label="השוואת לפני ואחרי">
+        </div>
       </div>
     </div>
   </section>
@@ -175,13 +242,87 @@
       </div>
     </div>
   </section>
+  <section class="faq-section">
+      <div class="container">
+          <h2 class="faq-title">שאלות נפוצות</h2>
+          
+          <div class="accordion">
+              <div class="accordion-item">
+                  <button class="accordion-header" aria-expanded="false">
+                      <span>האם זה מאט את האתר?</span>
+                      <span class="icon">+</span>
+                  </button>
+                  <div class="accordion-content">
+                      <p>חד משמעית לא. הסקריפט נטען בצורה א-סינכרונית (defer) ושוקל פחות מ-15KB. הוא לא חוסם את טעינת האתר בשום שלב.</p>
+                  </div>
+              </div>
+
+              <div class="accordion-item">
+                  <button class="accordion-header" aria-expanded="false">
+                      <span>האם זה עובד על Elementor / WordPress?</span>
+                      <span class="icon">+</span>
+                  </button>
+                  <div class="accordion-content">
+                      <p>כן. הווידג'ט עובד על כל פלטפורמה שמאפשרת הוספת קוד JS (כולל וויקס, שופיפיי, וורדפרס וקוד נקי).</p>
+                  </div>
+              </div>
+              
+              <div class="accordion-item">
+                  <button class="accordion-header" aria-expanded="false">
+                      <span>מה לגבי פרטיות המשתמשים?</span>
+                      <span class="icon">+</span>
+                  </button>
+                  <div class="accordion-content">
+                      <p>אנחנו לא אוספים שום מידע. כל ההגדרות נשמרות מקומית על דפדפן המשתמש בלבד.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
 
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-content">
-        <p>© 2025 ZeepClick Accessibility.</p>
-        <div class="footer-links">
-            <a href="#" id="footer-trigger">הצהרת נגישות</a>
+      <div class="footer-grid">
+          <div class="footer-brand">
+              <div class="logo">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/></svg>
+                </div>
+                <span>ZeepClick</span>
+              </div>
+              <p>הופכים את האינטרנט למקום נגיש יותר, אתר אחד בכל פעם. טכנולוגיה מתקדמת שעובדת בשבילך.</p>
+          </div>
+          <div class="footer-col">
+              <h4>מוצר</h4>
+              <ul>
+                  <li><a href="#features">פיצ'רים</a></li>
+                  <li><a href="#integration">התקנה</a></li>
+                  <li><a href="#">מחירים</a></li>
+                  <li><a href="#">דוקומנטציה</a></li>
+              </ul>
+          </div>
+          <div class="footer-col">
+              <h4>חברה</h4>
+              <ul>
+                  <li><a href="#">אודות</a></li>
+                  <li><a href="#">בלוג</a></li>
+                  <li><a href="#">קריירה</a></li>
+                  <li><a href="#">צור קשר</a></li>
+              </ul>
+          </div>
+          <div class="footer-col">
+              <h4>משפטי</h4>
+              <ul>
+                  <li><a href="#" id="footer-trigger">הצהרת נגישות</a></li>
+                  <li><a href="#">תנאי שימוש</a></li>
+                  <li><a href="#">מדיניות פרטיות</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 ZeepClick Accessibility. כל הזכויות שמורות.</p>
+        <div class="social-links">
+            <!-- Social icons could go here -->
         </div>
       </div>
     </div>
