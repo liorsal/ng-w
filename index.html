@@ -3,182 +3,209 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>תוסף נגישות — ZeepClick</title>
+  <title>ZeepClick Accessibility - הנגשת אתרים בקליק</title>
+  <meta name="description" content="תוסף נגישות מתקדם לאתרים. עמידה בתקנים, ללא פגיעה בביצועים.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  
   <header class="site-header">
-    <div class="container">
-      <div class="nav-content">
-        <div class="logo">Zeep<span>Click</span>.Accessibility</div>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          GitHub
-        </a>
+    <div class="container nav-content">
+      <div class="logo">
+        <div class="logo-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/></svg>
+        </div>
+        <span>ZeepClick</span>
       </div>
+      <nav class="nav-links">
+        <a href="#features">פיצ'רים</a>
+        <a href="#all-features">מפרט מלא</a>
+        <a href="#integration">התקנה</a>
+      </nav>
+      
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="badge">גרסה 2.0 זמינה כעת</div>
-        <h1>הנגשת אתרים <span>חכמה</span><br>ופשוטה להטמעה</h1>
-        <p>פתרון הנגישות המתקדם של ZeepClick. ללא שרתים, ללא עלויות נסתרות, ועם התאמה מלאה לצרכי המשתמש.</p>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="badge-pill">✨ גרסה 2.0 חדשה</div>
+        <h1>הופכים את האינטרנט<br><span class="text-gradient">לנגיש לכולם</span></h1>
+        <p class="hero-subtitle">
+          פתרון הנגשה אוטומטי, מהיר ועומד בתקנים. ללא תלות בשרתים, ללא עלויות נסתרות, ועם חוויית משתמש מעולה.
+        </p>
         <div class="hero-actions">
-          <a href="#" class="btn btn-primary" id="open-widget">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/></svg>
-            פתח תפריט נגישות
+          <button class="btn btn-primary btn-lg" id="open-widget-hero">
+            התנסות בדמו חי
+          </button>
+          <a href="#integration" class="btn btn-ghost btn-lg">
+            העתק קוד הטמעה &darr;
           </a>
-          <a href="#integration" class="btn btn-secondary">הוראות התקנה</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <strong>WCAG 2.1</strong>
+            <span>תאימות מלאה</span>
+          </div>
+          <div class="stat-item">
+            <strong>0ms</strong>
+            <span>עיכוב בטעינה</span>
+          </div>
+          <div class="stat-item">
+            <strong>100%</strong>
+            <span>פרטיות</span>
+          </div>
         </div>
       </div>
-    </section>
-
-    <div class="container">
-      <div class="main-grid">
-        <!-- Main Content -->
-        <div class="content-col">
-          <section class="card">
-            <h2>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
-              יכולות ליבה
-            </h2>
-            
-            <div class="features-grid">
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 5a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9M3 12a9 9 0 0 1 9-9 9 9 0 0 1 9 9"/></svg>
-                </div>
-                <h4>פרופילים חכמים</h4>
-                <p>התאמה מיידית לדיסלקסיה, לקויי ראייה וצרכים קוגניטיביים.</p>
-              </div>
-
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
-                </div>
-                <h4>מנוע טקסט</h4>
-                <p>שליטה מלאה בגודל, ריווח וגופן קריא בזמן אמת.</p>
-              </div>
-
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 17-5.86"/><path d="M19.3 14.3a2.83 2.83 0 0 1 0 4l-2.6 2.6a2.83 2.83 0 0 1-4 0l-2.6-2.6a2.83 2.83 0 0 1 0-4"/><path d="M14.7 14.3l4.6 4.6"/></svg>
-                </div>
-                <h4>הקראה קולית</h4>
-                <p>מנוע TTS (Text-to-Speech) להקראת תוכן האתר.</p>
-              </div>
-
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m16 6-4 4-4-4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg>
-                </div>
-                <h4>מצב רגוע</h4>
-                <p>נטרול הבהובים ואנימציות למניעת עומס חושי.</p>
-              </div>
+      <div class="hero-visual">
+        <div class="visual-card">
+            <div class="visual-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
             </div>
-
-            <ul class="checklist">
-              <li><strong>ללא תלות חיצונית</strong> — הקוד רץ בצד הלקוח בלבד</li>
-              <li><strong>תאימות WCAG 2.1 AA</strong> — נבנה לפי הסטנדרטים המחמירים</li>
-              <li><strong>ביצועים מעולים</strong> — השפעה אפסית על זמן טעינת האתר</li>
-              <li><strong>פרטיות מובנית</strong> — המידע נשמר בדפדפן המשתמש בלבד</li>
-            </ul>
-          </section>
-
-          <section class="card accessibility-statement" style="margin-top: 32px">
-             <h2>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              הצהרת נגישות
-            </h2>
-            <p>התוסף של ZeepClick מסייע בהנגשת האתר, אך אינו מחליף הנגשה בקוד המקור. אנו ממליצים על שילוב של התוסף יחד עם כתיבת קוד סמנטי ותקני.</p>
-            <p style="margin-bottom: 0">מומלץ לבצע בדיקות תקופתיות עם קוראי מסך (כגון NVDA או VoiceOver).</p>
-          </section>
+            <div class="visual-body">
+                <div class="skeleton-line w-75"></div>
+                <div class="skeleton-line w-50"></div>
+                <div class="skeleton-row">
+                    <div class="skeleton-box"></div>
+                    <div class="skeleton-box"></div>
+                </div>
+                <div class="float-ui ui-1">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9M3 12a9 9 0 0 1 9-9 9 9 0 0 1 9 9"/></svg>
+                    ניגודיות
+                </div>
+                <div class="float-ui ui-2">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
+                    גודל טקסט
+                </div>
+            </div>
         </div>
-
-        <!-- Sidebar -->
-        <aside id="integration">
-          <div class="card">
-            <h2>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
-              הטמעה מהירה
-            </h2>
-            <p style="color: var(--text-secondary)">העתק את הקוד הבא לפני סגירת תג <code class="inline-code">&lt;/body&gt;</code>:</p>
-
-            <div class="code-wrapper">
-              <div class="code-block">
-                <span class="code-comment">&lt;!-- ZeepClick Widget v2.0 --&gt;</span><br>
-                <span class="code-tag">&lt;script</span><br>
-                &nbsp;&nbsp;<span class="code-attr">src</span>=<span class="code-val">"https://liorsal.github.io/negi-vs/widget.min.js"</span><br>
-                &nbsp;&nbsp;<span class="code-attr">data-client-key</span>=<span class="code-val">"YOUR-KEY"</span><br>
-                &nbsp;&nbsp;<span class="code-attr">defer</span><span class="code-tag">&gt;</span><br>
-                <span class="code-tag">&lt;/script&gt;</span>
-              </div>
-            </div>
-
-            <p style="font-size: 14px; color: var(--text-secondary)">יש להחליף את <code class="inline-code">YOUR-KEY</code> במפתח הלקוח שקיבלת.</p>
-
-            <h3 style="font-size: 18px; margin-top: 24px; margin-bottom: 16px">שליטה למפתחים</h3>
-            
-            <div class="code-wrapper">
-              <div class="code-block">
-                <span class="code-tag">const</span> root = document.<span class="code-attr">getElementById</span>(<span class="code-val">'lior-acc-root'</span>);<br>
-                <span class="code-tag">if</span> (root) {<br>
-                &nbsp;&nbsp;<span class="code-tag">const</span> btn = root.<span class="code-attr">querySelector</span>(<span class="code-val">'.lior-acc-button'</span>);<br>
-                &nbsp;&nbsp;<span class="code-tag">if</span> (btn) btn.<span class="code-attr">click</span>();<br>
-                }
-              </div>
-            </div>
-          </div>
-        </aside>
       </div>
     </div>
-  </main>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>ארגז כלים מלא לנגישות</h2>
+        <p>כל מה שהמשתמשים שלכם צריכים כדי לגלוש בנוחות</p>
+      </div>
+      
+      <div class="grid-3">
+        <div class="feature-card">
+          <div class="icon-box blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 5a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9M3 12a9 9 0 0 1 9-9 9 9 0 0 1 9 9"/></svg>
+          </div>
+          <h3>פרופילים חכמים</h3>
+          <p>התאמה מהירה בלחיצה אחת: עיוורון צבעים, הפרעות קשב, דיסלקציה ועוד.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="icon-box purple">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 17-5.86"/><path d="M19.3 14.3a2.83 2.83 0 0 1 0 4l-2.6 2.6a2.83 2.83 0 0 1-4 0l-2.6-2.6a2.83 2.83 0 0 1 0-4"/><path d="M14.7 14.3l4.6 4.6"/></svg>
+          </div>
+          <h3>קורא מסך מובנה</h3>
+          <p>מנוע TTS (Text-to-Speech) מתקדם להקראת תוכן האתר ללא צורך בתוכנה חיצונית.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="icon-box green">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
+          </div>
+          <h3>עיצוב מותאם אישית</h3>
+          <p>המשתמש שולט בגודל הפונט, הריווח, צבעי הרקע וצורת הסמן.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="icon-box orange">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m16 6-4 4-4-4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg>
+          </div>
+          <h3>מניעת הסחות דעת</h3>
+          <p>מצב קריאה ממוקד, הסתרת תמונות ועצירת אנימציות והבהובים מסוכנים.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon-box pink">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>הצהרת נגישות</h3>
+            <p>דף הצהרת נגישות מובנה שמתעדכן אוטומטית לפי ההגדרות הפעילות.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon-box teal">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3"/><path d="M15 1v3"/><path d="M9 20v3"/><path d="M15 20v3"/><path d="M20 9h3"/><path d="M20 14h3"/><path d="M1 9h3"/><path d="M1 14h3"/></svg>
+            </div>
+            <h3>זכרון מקומי</h3>
+            <p>שמירת העדפות המשתמש בדפדפן, כך שהאתר יהיה נגיש גם בביקור הבא.</p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="integration" id="integration">
+    <div class="container">
+      <div class="code-panel">
+        <div class="code-header">
+            <h3>הטמעה מהירה</h3>
+            <p>העתיקו את הקוד והדביקו אותו לפני סגירת תגית <code class="inline-code">&lt;/body&gt;</code></p>
+        </div>
+        <div class="code-window">
+            <div class="window-controls">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="code-content">
+<pre><code class="language-html"><span class="comment">&lt;!-- ZeepClick Accessibility Widget --&gt;</span>
+<span class="tag">&lt;script</span> 
+  <span class="attr">src</span>=<span class="val">"https://liorsal.github.io/negi-vs/widget.min.js"</span>
+  <span class="attr">data-client-key</span>=<span class="val">"YOUR-CLIENT-KEY"</span>
+  <span class="attr">defer</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/script&gt;</span></code></pre>
+            <button class="btn-copy" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent); this.textContent='הועתק! ✓'; setTimeout(()=>this.textContent='העתק קוד', 2000)">העתק קוד</button>
+            </div>
+        </div>
+        <div class="integration-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            יש להחליף את <code class="inline-code">YOUR-CLIENT-KEY</code> במפתח שקיבלתם.
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer class="site-footer">
     <div class="container">
-      <p>© 2024 ZeepClick. כל הזכויות שמורות.</p>
+      <div class="footer-content">
+        <p>© 2025 ZeepClick Accessibility.</p>
+        <div class="footer-links">
+            <a href="#" id="footer-trigger">הצהרת נגישות</a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <!-- ===== Lior Accessibility Widget v2.0 - embed ===== -->
   <script
     src="https://liorsal.github.io/negi-vs/widget.min.js"
     data-client-key="ROEE-TATTOO-01"
     defer>
   </script>
-  <!-- ===== end ===== -->
 
   <script>
-    (function(){
-      const openBtn = document.getElementById('open-widget');
-      if (!openBtn) return;
-      
-      openBtn.addEventListener('click', function(e){
+    // חיבור הכפתור בדף הנחיתה לווידג'ט
+    document.getElementById('open-widget-hero').addEventListener('click', function() {
+        const widgetBtn = document.querySelector('.lior-acc-button');
+        if(widgetBtn) widgetBtn.click();
+    });
+    
+    // חיבור לינק פוטר להצהרה
+    document.getElementById('footer-trigger').addEventListener('click', function(e) {
         e.preventDefault();
-        
-        const retry = () => {
-          const root = document.getElementById('lior-acc-root');
-          if (!root) return false;
-          const btn = root.querySelector('.lior-acc-button');
-          if (btn) {
-            btn.click();
-            return true;
-          }
-          return false;
-        };
-        
-        if (!retry()) {
-          let attempts = 0;
-          const id = setInterval(() => {
-            attempts++;
-            if (retry() || attempts > 10) {
-              clearInterval(id);
-            }
-          }, 200);
-        }
-      });
-    })();
+        const declBtn = document.getElementById('lior-acc-declaration');
+        if(declBtn) declBtn.click();
+    });
   </script>
 </body>
 </html>
