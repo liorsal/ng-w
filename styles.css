@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;700;900&family=Alef:wght@300;400;500;700;900&display=swap');
 
 :root {
     /* Palette - Modern SaaS Look */
-    --bg-body: #F8FAFC;
+    --bg-body: #F3F4F6;
     --bg-surface: #FFFFFF;
-    --primary: #2563EB; /* Accessible Blue */
-    --primary-dark: #1D4ED8;
-    --primary-light: #EFF6FF;
+    --primary: #3B82F6;
+    --primary-dark: #1E3A8A;
+    --primary-light: #DBEAFE;
     --text-main: #0F172A;
     --text-secondary: #475569;
     --text-muted: #94A3B8;
-    --border: #E2E8F0;
-    --accent-gradient: linear-gradient(135deg, #2563EB 0%, #4F46E5 100%);
+    --border: #E5E7EB;
+    --accent-gradient: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
     
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -60,8 +60,12 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* System fonts first */
-    background-color: #fff;
+    font-family: 'Assistant', 'Alef', 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* System fonts first */
+    background-color: var(--bg-body);
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #1d1d1f; /* Apple's "almost black" */
     letter-spacing: -0.016em; /* Tight tracking */
     line-height: 1.6;
@@ -479,12 +483,6 @@ h2 {
 .hero {
     padding: 80px 0;
     overflow: hidden;
-    /* Modern Mesh Gradient Background */
-    background-color: #f8fafc;
-    background-image: 
-        radial-gradient(at 0% 0%, hsla(253,16%,7%,0) 0, hsla(253,16%,7%,0) 50%), 
-        radial-gradient(at 50% 0%, hsla(225,39%,30%,0) 0, hsla(225,39%,30%,0) 50%), 
-        radial-gradient(at 100% 0%, hsla(339,49%,30%,0) 0, hsla(339,49%,30%,0) 50%);
     position: relative;
 }
 
@@ -493,6 +491,8 @@ h2 {
     grid-template-columns: 1fr;
     gap: 60px;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 @media (min-width: 992px) {
@@ -519,15 +519,15 @@ h2 {
 }
 
 .text-gradient {
-    background: var(--accent-gradient);
-    background-clip: text;           /* standard property */
-    -webkit-background-clip: text;   /* prefixed for WebKit/Blink */
+    background: linear-gradient(180deg, #1d1d1f 0%, #434344 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
     font-size: 18px;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 32px;
     max-width: 540px;
 }
@@ -542,7 +542,7 @@ h2 {
 .hero-stats {
     display: flex;
     gap: 40px;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid rgba(148, 163, 184, 0.5);
     padding-top: 32px;
 }
 
@@ -553,12 +553,12 @@ h2 {
 
 .stat-item strong {
     font-size: 20px;
-    color: var(--text-main);
+    color: #ffffff;
 }
 
 .stat-item span {
     font-size: 14px;
-    color: var(--text-muted);
+    color: rgba(226, 232, 240, 0.9);
 }
 
 /* New Hero Mockup */
