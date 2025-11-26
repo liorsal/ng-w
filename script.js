@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initAccordion();
     initBeforeAfterSlider();
     initDarkModeToggle();
+    initContactForm();
 });
 
 function initDarkModeToggle() {
@@ -243,5 +244,66 @@ function initSmoothScroll() {
                 });
             }
         });
+    });
+}
+
+function initContactForm() {
+    const form = document.getElementById('contact-form');
+    const statusEl = document.getElementById('contact-status');
+
+    if (!form || !statusEl) return;
+
+    const apiUrl = 'https://zg89bs3zgb.execute-api.us-east-1.amazonaws.com/contact';
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const name = (formData.get('name') || '').toString().trim();
+        const email = (formData.get('email') || '').toString().trim();
+        const message = (formData.get('message') || '').toString().trim();
+
+        if (!name || !email || !message) {
+            statusEl.textContent = 'אנא מלא את כל השדות.';
+            return;
+        }
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) {
+            submitBtn.disabled = true;
+        }
+        statusEl.textContent = 'שולח...';
+
+        try {
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, email, message })
+            });
+
+            let data = {};
+            try {
+                data = await response.json();
+            } catch (e) {
+                data = {};
+            }
+
+            if (response.ok && data && data.success) {
+                statusEl.textContent = 'הודעתך נשלחה בהצלחה!';
+                form.reset();
+            } else {
+                statusEl.textContent = 'ארעה שגיאה בשליחת ההודעה. נסה שוב מאוחר יותר.';
+            }
+        } catch (error) {
+            console.error('Contact form error:', error);
+            statusEl.textContent = 'שגיאת רשת. נסה שוב מאוחר יותר.';
+        } finally {
+            const submitBtnFinally = form.querySelector('button[type="submit"]');
+            if (submitBtnFinally) {
+                submitBtnFinally.disabled = false;
+            }
+        }
     });
 }
