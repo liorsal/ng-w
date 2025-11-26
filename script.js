@@ -262,6 +262,10 @@ function initContactForm() {
         const name = (formData.get('name') || '').toString().trim();
         const email = (formData.get('email') || '').toString().trim();
         const message = (formData.get('message') || '').toString().trim();
+        const businessName = (formData.get('businessName') || '').toString().trim();
+        const revenue = (formData.get('revenue') || '').toString().trim();
+        const above120 = formData.get('above120') ? 'כן' : 'לא';
+        const phone = (formData.get('phone') || '').toString().trim();
 
         if (!name || !email || !message) {
             statusEl.textContent = 'אנא מלא את כל השדות.';
@@ -280,7 +284,15 @@ function initContactForm() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ name, email, message })
+                body: JSON.stringify({
+                    name,
+                    email,
+                    message,
+                    businessName,
+                    revenue,
+                    above120,
+                    phone
+                })
             });
 
             let data = {};
