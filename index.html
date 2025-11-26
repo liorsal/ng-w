@@ -227,13 +227,12 @@
                 <span></span><span></span><span></span>
             </div>
             <div class="code-content">
-<pre><code class="language-html"><span class="comment">&lt;!-- ZeepClick Accessibility Widget --&gt;</span>
-<span class="tag">&lt;script</span> 
-  <span class="attr">src</span>=<span class="val">"https://liorsal.github.io/negi-vs/widget.min.js"</span>
-  <span class="attr">data-client-key</span>=<span class="val">"YOUR-CLIENT-KEY"</span>
-  <span class="attr">defer</span><span class="tag">&gt;</span>
-<span class="tag">&lt;/script&gt;</span></code></pre>
-            <button class="btn-copy" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent); this.textContent='הועתק! ✓'; setTimeout(()=>this.textContent='העתק קוד', 2000)">העתק קוד</button>
+<pre><code id="integration-code">&lt;!-- ===== Lior Accessibility Widget v2.0 - embed ===== --&gt;
+&lt;script
+  src="https://liorsal.github.io/negi-vs/widget-free.min.js"
+  defer&gt;
+&lt;/script&gt;&lt;!-- ===== end ===== --&gt;</code></pre>
+            <button class="btn-copy" type="button">העתק קוד</button>
             </div>
         </div>
         <div class="integration-note">
@@ -329,11 +328,12 @@
     </div>
   </footer>
 
+  <!-- ===== Lior Accessibility Widget v2.0 - embed ===== -->
   <script
-    src="https://liorsal.github.io/negi-vs/widget.min.js"
-    data-client-key="ROEE-TATTOO-01"
+    src="https://liorsal.github.io/negi-vs/widget-free.min.js"
     defer>
   </script>
+  <!-- ===== end ===== -->
 
 
   <script>

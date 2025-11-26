@@ -134,14 +134,20 @@ function initBeforeAfterSlider() {
  */
 function initCopyButton() {
     const copyBtn = document.querySelector('.btn-copy');
-    const codeBlock = document.querySelector('code');
+    const codeBlock = document.getElementById('integration-code');
 
     if (!copyBtn || !codeBlock) return;
 
     copyBtn.addEventListener('click', async () => {
         try {
+            const codeToCopy = codeBlock.textContent.trim();
+
+            if (!codeToCopy) {
+                throw new Error('Missing code snippet content');
+            }
+
             // העתקה ללוח
-            await navigator.clipboard.writeText(codeBlock.innerText);
+            await navigator.clipboard.writeText(codeToCopy);
             
             // פידבק ויזואלי למשתמש
             const originalText = copyBtn.textContent;
